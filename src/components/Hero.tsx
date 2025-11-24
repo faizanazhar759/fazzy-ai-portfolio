@@ -3,7 +3,7 @@ import { ArrowRight, Sparkles } from "lucide-react";
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center px-6 pt-32 overflow-hidden">
       {/* Ambient glow effects */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] animate-pulse" />
       <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent/20 rounded-full blur-[120px] animate-pulse delay-1000" />
@@ -20,17 +20,16 @@ const Hero = () => {
         
         {/* Main heading */}
         <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight mb-6 leading-tight">
-          <span className="gradient-text">AI/ML Developer</span>
+          Faizan Azhar
           <br />
-          Building Agentic AI, RAG Systems,
-          <br />
-          and Automation Solutions
+          <span className="gradient-text">AI Developer</span>
         </h1>
         
         {/* Subheading */}
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
-          I help startups and enterprises build intelligent AI agents, automate workflows, 
-          and deploy scalable LLM-powered systems.
+          I design Retrieval-Augmented Generation platforms, production-ready AI agents,
+          and workflow automation that ships on schedule. Every build is grounded in measurable
+          impact, observability, and secure delivery.
         </p>
         
         {/* CTA Buttons */}
@@ -40,21 +39,14 @@ const Hero = () => {
             target="_blank" 
             rel="noopener noreferrer"
           >
-            <Button 
-              size="lg" 
+            <Button
+              size="lg"
               className="gradient-primary text-white glow-primary hover:scale-105 transition-all duration-300 w-full sm:w-auto"
             >
               Hire Me on Upwork
               <ArrowRight className="ml-2 w-4 h-4" />
             </Button>
           </a>
-          <Button 
-            size="lg" 
-            variant="outline" 
-            className="border-2 hover:bg-card hover:border-primary/50 transition-all duration-300 w-full sm:w-auto"
-          >
-            View Projects
-          </Button>
         </div>
       </div>
     </section>

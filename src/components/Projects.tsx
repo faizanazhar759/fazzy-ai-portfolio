@@ -1,82 +1,92 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { Separator } from "@/components/ui/separator";
 
 const projects = [
   {
-    title: "Multi-Agent Task Automation Platform",
-    description: "Developed an autonomous AI system using LangChain and GPT-4 that handles multi-step workflows, achieving 70% reduction in manual processing time.",
-    tech: ["LangChain", "GPT-4", "Python", "FastAPI"],
+    title: "AI Knowledge Base Assistant | Private RAG Chatbot with FastAPI + GPT-4",
+    role: "Built a RAG-based AI assistant that answers from internal docs using LangChain, GPT-4, and FastAPI.",
+    description:
+      "Private AI Knowledge Base Assistant that lets teams query PDFs, Notion pages, and databases using natural conversation. LangChain orchestrates GPT-4 with FAISS/Chroma retrieval and hardened FastAPI endpoints to return context-aware answers without hallucinations.",
+    tech: ["FastAPI", "LangChain", "PostgreSQL", "FAISS", "GPT-4"],
+    github: "Private repo — access available upon request.",
+    skills: ["Retrieval Augmented Generation", "Vector Databases", "Conversational AI", "Security Controls"],
   },
   {
-    title: "Enterprise Knowledge Retrieval System",
-    description: "Implemented RAG pipeline with Pinecone vector database, processing 10,000+ daily queries with 95% accuracy for enterprise document search.",
-    tech: ["Pinecone", "OpenAI", "MongoDB", "Docker"],
+    title: "AI Voice Agent | Smart Appointment Booking with GPT-4o + Whisper",
+    role: "Built a voice AI that books appointments using GPT-4o, Whisper, and FastAPI.",
+    description:
+      "Voice-native assistant that listens, detects intent, checks availability, and confirms bookings over phone or web. FastAPI coordinates GPT-4o reasoning, Whisper transcription, and Twilio voice channels for multi-domain scheduling with real-time speech + text responses.",
+    tech: ["FastAPI", "PostgreSQL", "Twilio", "GPT-4o", "Whisper"],
+    github: "Private repo — access on request.",
+    skills: ["Conversational AI", "Speech Recognition", "Twilio Integrations", "NLP"],
   },
   {
-    title: "Intelligent Content Generation Workflow",
-    description: "Built multi-agent system with CrewAI for automated research, content creation, and quality assurance across marketing channels.",
-    tech: ["CrewAI", "Claude", "n8n", "AWS"],
+    title: "AI Code Analyzer & Jira Ticket Bot | FastAPI + GPT-4 + Tree-sitter",
+    role: "Built a hybrid AI that analyzes real code, maps dependencies, and auto-creates Jira tickets.",
+    description:
+      "Automation platform that ingests GitHub repos and PRDs, parses ASTs via Tree-sitter, and uses GPT-4/Claude to produce accurate Jira tickets with dependency mapping and effort estimates. Includes dashboards for complexity metrics and CI-safe rollout.",
+    tech: ["FastAPI", "PostgreSQL", "Redis", "LangGraph", "Streamlit"],
+    github: "Private repo — access available upon request.",
+    skills: ["AI Agent Development", "LangChain", "Jira Automation", "Code Intelligence"],
   },
   {
-    title: "Real-Time Quality Control System",
-    description: "Deployed computer vision solution using YOLOv8 for manufacturing defect detection, achieving 98% accuracy in production environment.",
-    tech: ["PyTorch", "YOLOv8", "FastAPI", "GCP"],
-  },
-  {
-    title: "Custom LLM Fine-Tuning Pipeline",
-    description: "Created end-to-end pipeline for domain-specific LLM fine-tuning, improving model performance by 40% for specialized industry use cases.",
-    tech: ["LLaMA", "Hugging Face", "PyTorch", "AWS"],
-  },
-  {
-    title: "AI-Powered Process Automation Suite",
-    description: "Integrated multiple AI models with n8n workflows to automate complex business processes, reducing operational overhead by 60%.",
-    tech: ["n8n", "OpenAI", "Make.com", "Docker"],
+    title: "AI-Powered Multimedia Workflow Automation with OpenAI & Airtable",
+    role: "Designed and built an AI workflow using OpenAI, transcription, image gen, and Airtable.",
+    description:
+      "Modular automation that ingests audio, transcribes content, generates imagery with OpenAI models, and logs outputs to Airtable for editorial pipelines. Includes n8n orchestration, metadata schema, and guardrails for review.",
+    tech: ["OpenAI", "Python", "Airtable", "n8n"],
+    github: "Private workflow — access available upon request.",
+    skills: ["ChatGPT API Integration", "Workflow Automation", "AI Image Generation", "Airtable"],
   },
 ];
 
 const Projects = () => {
   return (
-    <section className="py-24 px-6 relative">
-      <div className="container max-w-7xl mx-auto">
+    <section id="projects" className="py-24 px-6 relative">
+      <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold mb-6">Featured Projects</h2>
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Projects</h2>
           <div className="h-1 w-20 gradient-primary mx-auto mb-8 rounded-full glow-primary" />
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Production AI systems delivering measurable business impact
+          <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
+            Selected builds that highlight private AI assistants, voice automation, and developer tooling.
           </p>
         </div>
-        
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {projects.map((project, index) => (
-            <Card 
-              key={index} 
-              className="bg-card/50 backdrop-blur-sm border-2 border-border hover:border-primary/50 hover:bg-card/80 transition-all duration-500 group"
+
+        <div className="grid md:grid-cols-2 gap-6">
+          {projects.map((project) => (
+            <Card
+              key={project.title}
+              className="bg-card/60 backdrop-blur-sm border-2 border-border hover:border-primary/50 hover:-translate-y-1 transition-all duration-500"
             >
               <CardHeader>
-                <CardTitle className="text-xl mb-2 group-hover:text-primary transition-colors">
-                  {project.title}
-                </CardTitle>
-                <CardDescription className="text-base leading-relaxed text-muted-foreground">
-                  {project.description}
-                </CardDescription>
+                <CardTitle className="text-xl">{project.title}</CardTitle>
+                <CardDescription className="text-base text-primary/80">{project.role}</CardDescription>
               </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.map((tech, i) => (
-                    <Badge key={i} variant="outline" className="bg-background/50">
-                      {tech}
-                    </Badge>
-                  ))}
+              <CardContent className="space-y-4">
+                <p className="text-muted-foreground leading-relaxed">{project.description}</p>
+                <div>
+                  <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">Tech</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.tech.map((tech) => (
+                      <Badge key={tech} variant="outline" className="bg-background/50">
+                        {tech}
+                      </Badge>
+                    ))}
+                  </div>
                 </div>
-                <Button 
-                  variant="ghost" 
-                  className="w-full group/btn hover:bg-primary/10 hover:text-primary transition-all"
-                >
-                  View Case Study
-                  <ExternalLink className="ml-2 w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                </Button>
+                <Separator className="bg-border/60" />
+                <div>
+                  <p className="text-sm font-semibold text-muted-foreground uppercase tracking-wide mb-3">Skills</p>
+                  <div className="flex flex-wrap gap-2">
+                    {project.skills.map((skill) => (
+                      <Badge key={skill} variant="secondary" className="bg-secondary/50">
+                        {skill}
+                      </Badge>
+                    ))}
+                  </div>
+                </div>
+                <p className="text-sm text-muted-foreground">{project.github}</p>
               </CardContent>
             </Card>
           ))}

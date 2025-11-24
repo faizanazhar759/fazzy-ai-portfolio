@@ -3,19 +3,18 @@ import { ArrowRight } from "lucide-react";
 
 const Contact = () => {
   return (
-    <section className="py-24 px-6 relative">
+    <section id="contact" className="py-24 px-6 relative">
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-transparent" />
       
       <div className="container max-w-4xl mx-auto relative z-10">
         <div className="bg-card/50 backdrop-blur-sm border-2 border-border rounded-3xl p-12 md:p-16 text-center hover:border-primary/50 transition-all duration-500">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Let's Build Something
-            <br />
-            <span className="gradient-text">Extraordinary Together</span>
+            Ship AI products with confidence
           </h2>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-10 max-w-2xl mx-auto leading-relaxed">
-            Ready to transform your business with AI? Let's discuss how I can help you build intelligent systems that deliver real results.
+            Ready to deploy a private AI assistant, voice agent, or automation pipeline? I scope the deliverables,
+            build the stack, and document everything so your team can maintain it without vendor lock-in.
           </p>
           
           <a 
