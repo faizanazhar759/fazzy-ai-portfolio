@@ -27,9 +27,9 @@ const Hero = () => {
         
         {/* Subheading */}
         <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 leading-relaxed">
-          I design Retrieval-Augmented Generation platforms, production-ready AI agents,
-          and workflow automation that ships on schedule. Every build is grounded in measurable
-          impact, observability, and secure delivery.
+          I build production-ready AI systems with a focus on Retrieval-Augmented Generation, autonomous agents,
+          and workflow automation. My work emphasizes reliability, observability, and secure engineering practices—
+          ensuring every solution delivers measurable impact from day one.
         </p>
         
         {/* CTA Buttons */}
