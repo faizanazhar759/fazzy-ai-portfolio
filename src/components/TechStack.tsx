@@ -8,31 +8,28 @@ const technologies = [
   "OpenAI",
   "Claude",
   "Pinecone",
-  "Weaviate",
-  "MongoDB",
+  "ChromaDB",
   "PostgreSQL",
+  "MongoDB",
   "Docker",
   "Kubernetes",
   "AWS",
   "GCP",
-  "Azure",
   "n8n",
-  "Zapier",
-  "Make",
+  "Make.com",
   "PyTorch",
   "TensorFlow",
   "Hugging Face",
   "CrewAI",
-  "AutoGPT",
 ];
 
 const TechStack = () => {
   return (
-    <section className="py-24 px-6 bg-muted/30">
+    <section className="py-24 px-6 relative">
       <div className="container max-w-6xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Tech Stack</h2>
-          <div className="h-1 w-20 gradient-primary mx-auto mb-8 rounded-full" />
+          <h2 className="text-3xl md:text-5xl font-bold mb-6">Tech Stack</h2>
+          <div className="h-1 w-20 gradient-primary mx-auto mb-8 rounded-full glow-primary" />
           <p className="text-lg text-muted-foreground">
             Technologies and tools I work with daily
           </p>
@@ -43,7 +40,7 @@ const TechStack = () => {
             <Badge 
               key={index} 
               variant="secondary" 
-              className="px-4 py-2 text-base font-medium hover:bg-primary hover:text-primary-foreground transition-colors cursor-default"
+              className="px-5 py-2.5 text-base font-medium bg-card/50 backdrop-blur-sm border border-border hover:bg-primary hover:text-white hover:border-primary hover:glow-primary transition-all duration-300 cursor-default"
             >
               {tech}
             </Badge>
